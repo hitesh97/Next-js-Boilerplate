@@ -33,7 +33,7 @@ const Header = () => {
               Portfolio
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/about">
             <a
               href="#"
               className="block hover:text-gray-700 mt-4 lg:inline-block lg:mt-0 mr-10"

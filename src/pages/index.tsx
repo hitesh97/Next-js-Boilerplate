@@ -1,21 +1,19 @@
-import { useRouter } from 'next/router';
+import React from 'react';
 
-import { Meta } from '../layout/Meta';
-import { Main } from '../templates/Main';
+import HeroWithContactform from '../components/HeroWithContactform';
+import MultiCards from '../components/MultiCards';
+import Pricing from '../components/Pricing';
+import MainLayout from '../layout/MainLayout';
 
 const Index = () => {
-  const router = useRouter();
-
   return (
-    <Main
-      meta={
-        <Meta
-          title="Next.js Boilerplate Presentation"
-          description="Next js Boilerplate is the perfect starter code for your project. Build your React application with the Next.js framework."
-        />
-      }
-    >
-      <a href="https://github.com/ixartz/Next-js-Boilerplate">
+    <MainLayout>
+      <HeroWithContactform />
+      {/** Three card section */}
+      <MultiCards gridSize={4} />
+      {/** Pricing section */}
+      <Pricing />
+      {/*  <a href="https://github.com/ixartz/Next-js-Boilerplate">
         <img
           src={`${router.basePath}/assets/images/nextjs-starter-banner.png`}
           alt="Nextjs starter banner"
@@ -179,7 +177,8 @@ const Index = () => {
         </a>{' '}
         on our website to support this project.
       </p>
-    </Main>
+ */}{' '}
+    </MainLayout>
   );
 };
 

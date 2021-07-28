@@ -9,7 +9,7 @@ const generateCards = (totalNoOfCards: number, gridSize: number) => {
   return [...Array(totalNoOfCards)].map((i) => {
     return (
       <div
-        className={`w-full md:w-1/${gridSize} p-6 flex flex-col flex-grow flex-shrink`}
+        className={`w-full md:w-1/${gridSize} p-4 flex flex-col flex-grow flex-shrink`}
         // eslint-disable-next-line react/no-array-index-key
         key={`cardItem=${i}`}
       >
@@ -30,7 +30,7 @@ const generateCards = (totalNoOfCards: number, gridSize: number) => {
             </p>
           </a>
         </div>
-        <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+        <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow">
           <div className="flex items-center justify-center">
             <button
               type="button"
