@@ -1,36 +1,77 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 
+import Link from 'next/link';
+
+import BrandLogo from './BrandLogo';
+
 const Header = () => {
   const [showMenu, setToggleMenu] = useState(false);
   return (
     <header className="flex flex-wrap flex-row justify-between md:items-center md:space-x-4 py-4 px-6 border-b-2 z-10 bg-gray-100 fixed inset-x-0 top-0">
-      Logo here
+      <div>
+        <a
+          className="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+          href="#"
+        >
+          <BrandLogo />
+        </a>
+      </div>
       <nav
-        className={`absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row md:space-x-6 font-semibold w-full md:w-auto shadow-md rounded-lg md:rounded-none md:shadow-none p-2 md:px-6 bg-gray-100 ${
+        className={`absolute md:relative top-16 left-0 md:top-0 z-20 flex-grow md:flex flex-col md:flex-row md:space-x-6 font-semibold w-full md:w-auto shadow-md rounded-lg md:rounded-none md:shadow-none sm:px-6 bg-gray-100 ${
           showMenu ? 'flex' : 'hidden'
         }`}
       >
         <div className="align-middle">
-          <a
-            href="#"
-            className="block py-1 text-indigo-600 hover:underline align-text-middle"
-          >
-            Home
-          </a>
+          <Link href="/">
+            <a
+              href="#"
+              className="block py-1 text-indigo-600 hover:underline align-text-middle"
+            >
+              Home
+            </a>
+          </Link>
         </div>
-        <a href="#" className="block py-1 text-gray-600 hover:underline">
-          About us
-        </a>
-        <a href="#" className="block py-1 text-gray-600 hover:underline">
-          Services
-        </a>
-        <a href="#" className="block py-1 text-gray-600 hover:underline">
-          Blog
-        </a>
-        <a href="#" className="block py-1 text-gray-600 hover:underline">
-          Contact
-        </a>
+        <div className="align-middle">
+          <Link href="/about">
+            <a
+              href="#"
+              className="block py-1 text-indigo-600 hover:underline align-text-middle"
+            >
+              About us
+            </a>
+          </Link>
+        </div>
+        <div className="align-middle">
+          <Link href="/services">
+            <a
+              href="#"
+              className="block py-1 text-indigo-600 hover:underline align-text-middle"
+            >
+              Services
+            </a>
+          </Link>
+        </div>
+        <div className="align-middle">
+          <Link href="/blog">
+            <a
+              href="#"
+              className="block py-1 text-indigo-600 hover:underline align-text-middle"
+            >
+              Blog
+            </a>
+          </Link>
+        </div>
+        <div className="align-middle">
+          <Link href="/contact-us">
+            <a
+              href="#"
+              className="block py-1 text-indigo-600 hover:underline align-text-middle"
+            >
+              Contact us
+            </a>
+          </Link>
+        </div>
       </nav>
       <div className="flex items-center">
         <div className="mr-5 lg:mr-0">
