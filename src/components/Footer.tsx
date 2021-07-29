@@ -1,6 +1,10 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 
+import Link from 'next/link';
+
+import { FooterMenu } from '../data/footer-menu';
+import { MenuItem, MenuItemGroup } from '../data/menuItem';
 import BrandLogo from './BrandLogo';
 
 const Footer = () => {
@@ -17,114 +21,30 @@ const Footer = () => {
               LANDING
             </a>
           </div>
-          <div className="flex-1">
-            <p className="uppercase text-gray-500 md:mb-6">Links</p>
-            <ul className="list-reset mb-6">
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  FAQ
-                </a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  Help
-                </a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  Support
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="flex-1">
-            <p className="uppercase text-gray-500 md:mb-6">Legal</p>
-            <ul className="list-reset mb-6">
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  Terms
-                </a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  Privacy
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="flex-1">
-            <p className="uppercase text-gray-500 md:mb-6">Social</p>
-            <ul className="list-reset mb-6">
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  Facebook
-                </a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  Linkedin
-                </a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  Twitter
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="flex-1">
-            <p className="uppercase text-gray-500 md:mb-6">Company</p>
-            <ul className="list-reset mb-6">
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  Official Blog
-                </a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  About Us
-                </a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+          {FooterMenu.map((menuGroup: MenuItemGroup) => (
+            <div key={`footer-group-${menuGroup.index}`} className="flex-1">
+              <p className="uppercase text-gray-500 md:mb-6">
+                {menuGroup.heading}
+              </p>
+              <ul className="list-reset mb-6">
+                {menuGroup.menuItems.map((menuItem: MenuItem) => (
+                  <li
+                    key={`footer-item-${menuItem.index}`}
+                    className="mt-2 inline-block mr-2 md:block md:mr-0"
+                  >
+                    <Link href={menuItem.href}>
+                      <a
+                        href={menuItem.href}
+                        className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                      >
+                        {menuItem.label}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </footer>

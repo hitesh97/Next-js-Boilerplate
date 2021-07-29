@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 
 import Link from 'next/link';
 
-import { HeaderMenu, HeaderMenuItem } from '../data/header-menu';
+import { HeaderMenu } from '../data/header-menu';
+import { MenuItem } from '../data/menuItem';
 import BrandLogo from './BrandLogo';
 
 const Header = () => {
@@ -24,7 +25,7 @@ const Header = () => {
         }`}
       >
         {HeaderMenu.sort((a, b) => (a.index > b.index ? 1 : -1)).map(
-          (menuItem: HeaderMenuItem) => (
+          (menuItem: MenuItem) => (
             <div key={menuItem.index} className="align-middle">
               <Link href={menuItem.href}>
                 <a

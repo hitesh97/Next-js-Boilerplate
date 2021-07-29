@@ -1,9 +1,6 @@
-export interface HeaderMenuItem {
-  index: number;
-  href: string;
-  label: string;
-}
-export const HeaderMenu: Array<HeaderMenuItem> = [
+import { MenuItem } from './menuItem';
+
+export const HeaderMenu: Array<MenuItem> = [
   {
     index: 1,
     href: '#',
