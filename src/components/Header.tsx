@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import Link from 'next/link';
 
+import { HeaderMenu, HeaderMenuItem } from '../data/header-menu';
 import BrandLogo from './BrandLogo';
 
 const Header = () => {
@@ -22,56 +23,20 @@ const Header = () => {
           showMenu ? 'flex' : 'hidden'
         }`}
       >
-        <div className="align-middle">
-          <Link href="/">
-            <a
-              href="#"
-              className="block py-1 text-indigo-600 hover:underline align-text-middle"
-            >
-              Home
-            </a>
-          </Link>
-        </div>
-        <div className="align-middle">
-          <Link href="/about">
-            <a
-              href="#"
-              className="block py-1 text-indigo-600 hover:underline align-text-middle"
-            >
-              About us
-            </a>
-          </Link>
-        </div>
-        <div className="align-middle">
-          <Link href="/services">
-            <a
-              href="#"
-              className="block py-1 text-indigo-600 hover:underline align-text-middle"
-            >
-              Services
-            </a>
-          </Link>
-        </div>
-        <div className="align-middle">
-          <Link href="/blog">
-            <a
-              href="#"
-              className="block py-1 text-indigo-600 hover:underline align-text-middle"
-            >
-              Blog
-            </a>
-          </Link>
-        </div>
-        <div className="align-middle">
-          <Link href="/contact-us">
-            <a
-              href="#"
-              className="block py-1 text-indigo-600 hover:underline align-text-middle"
-            >
-              Contact us
-            </a>
-          </Link>
-        </div>
+        {HeaderMenu.sort((a, b) => (a.index > b.index ? 1 : -1)).map(
+          (menuItem: HeaderMenuItem) => (
+            <div key={menuItem.index} className="align-middle">
+              <Link href={menuItem.href}>
+                <a
+                  href={menuItem.href}
+                  className="block py-1 text-indigo-600 hover:underline align-text-middle"
+                >
+                  {menuItem.label}
+                </a>
+              </Link>
+            </div>
+          )
+        )}
       </nav>
       <div className="flex items-center">
         <div className="mr-5 lg:mr-0">
