@@ -3,7 +3,7 @@ import { MenuItem } from './menuItem';
 export const HeaderMenu: Array<MenuItem> = [
   {
     index: 1,
-    href: '#',
+    href: '/',
     label: 'Home',
   },
   {
