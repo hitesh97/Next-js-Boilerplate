@@ -9,7 +9,7 @@ export const HeaderMenu: Array<MenuItem> = [
   {
     index: 2,
     href: '/about',
-    label: 'About us',
+    label: 'Titles',
   },
   {
     index: 5,

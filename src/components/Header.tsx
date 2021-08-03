@@ -20,7 +20,7 @@ const Header = () => {
         </a>
       </div>
       <nav
-        className={`absolute md:relative top-16 left-0 md:top-0 z-20 flex-grow md:flex flex-col md:flex-row md:space-x-6 font-semibold w-full md:w-auto shadow-md rounded-lg md:rounded-none md:shadow-none sm:px-6 bg-gray-100 ${
+        className={`absolute md:relative top-16 left-0 md:top-0 z-20 flex-grow md:flex flex-col md:flex-row md:space-x-6 font-semibold w-full md:w-auto shadow-md rounded-lg md:rounded-none md:shadow-none bg-gray-100 px-6 ${
           showMenu ? 'flex' : 'hidden'
         }`}
       >

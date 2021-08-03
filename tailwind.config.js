@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 // eslint-disable-next-line import/no-extraneous-dependencies
 const colors = require('tailwindcss/colors');
 
@@ -1037,5 +1038,5 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

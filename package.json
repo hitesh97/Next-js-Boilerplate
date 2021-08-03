@@ -14,6 +14,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.3",
     "mssql": "^7.2.0",
     "next": "^11.0.1",
     "next-seo": "^4.26.0",
