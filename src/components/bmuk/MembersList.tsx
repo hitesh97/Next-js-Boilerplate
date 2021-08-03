@@ -66,6 +66,7 @@ const ShowDetails = () => {
 const MembersList = () => {
   const { entries, isLoading } = useHeadMembers();
   if (isLoading) return <div>Loading......</div>;
+
   return (
     <section className="container mx-auto px-6">
       <div className="flex flex-wrap flex-row justify-between">
@@ -105,7 +106,7 @@ const MembersList = () => {
                 {entry.Id}
               </td>
               <td className="py-3 px-6 text-left whitespace-nowrap">
-                {entry.LastName}
+                {entry.Surname}
               </td>
               <td className="py-3 px-6 text-left whitespace-nowrap">
                 {entry.FirstName}

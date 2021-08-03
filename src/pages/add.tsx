@@ -1,9 +1,48 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useState } from 'react';
 
 import MainLayout from '../layout/MainLayout';
 
+// import { IMember }from '../mssql/member';
+
 const Index = () => {
+  const [Title, setTitle] = useState('');
+  const [Surname, setSurname] = useState('');
+  const [Firstname, setFirstname] = useState('');
+  const [Middlename, setMiddlename] = useState('');
+  const [FathersName, setFathersName] = useState('');
+  const [EmailAddress, setEmailAddress] = useState('');
+  const [BirthYear, setBirthYear] = useState('');
+  const [Mosal, setMosal] = useState('');
+  const [Profession, setProfession] = useState('');
+  const [AddressLine1, setAddressLine1] = useState('');
+  const [AddressLine2, setAddressLine2] = useState('');
+  const [Town, setTown] = useState('');
+  const [County, setCounty] = useState('');
+  const [PostCode, setPostCode] = useState('');
+  const [TelNo, setTelNo] = useState('');
+  const [MobileNo, setMobileNo] = useState('');
+  const [SendNewsletter, setSendNewsletter] = useState(false);
+  const [PublishInDirectory, setPublishInDirectory] = useState(false);
+
+  console.log(Surname);
+  console.log(Firstname);
+  console.log(Middlename);
+  console.log(FathersName);
+  console.log(EmailAddress);
+  console.log(BirthYear);
+  console.log(Mosal);
+  console.log(Profession);
+  console.log(AddressLine1);
+  console.log(AddressLine2);
+  console.log(Town);
+  console.log(County);
+  console.log(PostCode);
+  console.log(TelNo);
+  console.log(MobileNo);
+  console.log(SendNewsletter);
+  console.log(PublishInDirectory);
+
   return (
     <MainLayout>
       <section className="container mx-auto px-6 mb-20">
@@ -14,10 +53,12 @@ const Index = () => {
               <span className="text-gray-700">Title</span>
               <select
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
+                  setTitle(event.target.value)
+                }
               >
                 <option>Select One</option>
-                <option>Mr</option>
+                <option selected={Title === 'Mr'}>Mr</option>
                 <option>Mrs</option>
                 <option>Dr</option>
               </select>
@@ -28,6 +69,9 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setSurname(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -36,6 +80,9 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setFirstname(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -44,6 +91,9 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setMiddlename(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -52,6 +102,9 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setFathersName(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -60,6 +113,9 @@ const Index = () => {
                 type="email"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder="john@example.com"
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setEmailAddress(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -68,6 +124,9 @@ const Index = () => {
                 type="number"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setBirthYear(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -76,6 +135,9 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setMosal(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -84,6 +146,9 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setProfession(event.target.value)
+                }
               />
             </label>
           </div>
@@ -94,6 +159,9 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setAddressLine1(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -102,6 +170,9 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setAddressLine2(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -110,6 +181,9 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setTown(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -118,6 +192,9 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setCounty(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -126,6 +203,9 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setPostCode(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -134,6 +214,9 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setTelNo(event.target.value)
+                }
               />
             </label>
             <label className="block mt-6">
@@ -142,16 +225,33 @@ const Index = () => {
                 type="text"
                 className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder=""
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setMobileNo(event.target.value)
+                }
               />
             </label>
             <div className="grid grid-cols-2 gap-2">
               <label className="block mt-6">
                 <span className="text-gray-700">Send Newsletter?</span>
-                <input type="checkbox" className="mt-0 mx-4" />
+                <input
+                  type="checkbox"
+                  className="mt-0 mx-4"
+                  checked={SendNewsletter === true}
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    setSendNewsletter(event.target.checked)
+                  }
+                />
               </label>
               <label className="block mt-6">
                 <span className="text-gray-700">Publish Directory?</span>
-                <input type="checkbox" className="mt-0 mx-4" />
+                <input
+                  type="checkbox"
+                  className="mt-0 mx-4"
+                  checked={PublishInDirectory === true}
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    setPublishInDirectory(event.target.checked)
+                  }
+                />
               </label>
             </div>
           </div>
