@@ -16,8 +16,11 @@ export function useTitles() {
   };
 }
 
-export function useHeadMembers() {
-  const { data, error } = useSWR(`/api/getHeadMembers`, fetcher);
+export function useHeadMembers(pageNo: number = 0) {
+  const { data, error } = useSWR(
+    `/api/getHeadMembers?pageno=${pageNo}`,
+    fetcher
+  );
   return {
     entries: data as Array<IMember>,
     isLoading: !error && !data,

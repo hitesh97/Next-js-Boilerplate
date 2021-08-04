@@ -2,9 +2,13 @@ import { NextApiHandler } from 'next';
 
 import NaatDirectory from '../../mssql/member';
 
-const handler: NextApiHandler = async (_, res) => {
+const handler: NextApiHandler = async (req, res) => {
   try {
-    const results = await NaatDirectory.getAllHeadMembers();
+    let pageNo = 0;
+    if (req.query && req.query.pageno && req.query.pageno.length === 1) {
+      pageNo = Number(req.query.pageno[0] || '0');
+    }
+    const results = await NaatDirectory.getAllHeadMembers(pageNo);
 
     return res.json(results);
   } catch (e) {

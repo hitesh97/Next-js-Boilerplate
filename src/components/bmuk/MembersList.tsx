@@ -2,6 +2,7 @@
 import React from 'react';
 
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { useHeadMembers } from '../../lib/swr-hooks';
 
@@ -64,7 +65,14 @@ const ShowDetails = () => {
 };
 
 const MembersList = () => {
-  const { entries, isLoading } = useHeadMembers();
+  const router = useRouter();
+  const pageNo =
+    (router.query &&
+      router.query.pageno &&
+      router.query.pageno.length > 0 &&
+      router.query.pageno[0]) ||
+    '0';
+  const { entries, isLoading } = useHeadMembers(Number(pageNo));
   if (isLoading) return <div>Loading......</div>;
 
   return (
